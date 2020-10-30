@@ -103,3 +103,34 @@ function getInputAsArray(input) {
   }
   return intArray;
 }
+
+// Test: getInputAsArray should check a variable for a number, convert it to an array,then add numbers to the front to count down from the starting value, and convert numbers to the right phrases
+// Expect: getInputAsArray(inputNumber).toEqual([0, "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 8, 9, "Beep!", "Beep!", "Boop!", "Won't you be my neighbor?"]);
+const inputNumber = parseInt("13");
+function getInputAsArray(input) {
+  const intArray = [input];
+  const contains1 = (/1/);
+  const contains2 = (/2/);
+  const contains3 = (/3/);
+  for(let i = (intArray[0] - 1); i >= 0; i -= 1) {
+    if(contains3.test(i) === true) {
+      intArray.unshift("Won't you be my neighbor?");
+    }else if(contains2.test(i) === true) {
+      intArray.unshift("Boop!");
+    }else if(contains1.test(i) === true) {
+      intArray.unshift("Beep!");
+    } else {
+    intArray.unshift(i);
+    }
+  }
+
+  if(contains3.test(intArray[intArray.length - 1]) === true) {
+    intArray[intArray.length - 1] = ("Won't you be my neighbor?");
+  }else if(contains2.test(intArray[intArray.length - 1]) === true) {
+    intArray[intArray.length - 1] = ("Boop!");
+  }else if(contains1.test(intArray[intArray.length - 1]) === true) {
+    intArray[intArray.length - 1] = ("Beep!");
+  } else {
+  }
+  return intArray;
+}
