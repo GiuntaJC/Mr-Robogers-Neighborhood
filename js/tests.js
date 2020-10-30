@@ -56,8 +56,17 @@ function getInputAsArray(input) {
   const intArray = [input];
   for(let i = 1; i <= 3; i += 1) {
     intArray.unshift(0);
-    console.log(intArray);
   }
   return intArray;
 }
 
+// Test: getInputAsArray should check a variable for a number, convert it to an array,then add zeroes to the front equal to the input number - 1
+// Expect: getInputAsArray(inputNumber).toEqual([0, 0, 0, 9]);
+const inputNumber = parseInt("9");
+function getInputAsArray(input) {
+  const intArray = [input];
+  for(let i = (intArray[0] - 1); i >= 0; i -= 1) {
+    intArray.unshift(0);
+  }
+  return intArray;
+}
