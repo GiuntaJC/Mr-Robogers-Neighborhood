@@ -32,7 +32,7 @@
 
 // The tests below this point were done after I figured out my mistake
 
-// Test: getInputAsArray should check a variable convert it to an array
+// Test: getInputAsArray should check a variable and convert it to an array
 // Expect: getInputAsArray(inputNumber).toEqual([9]);
 const inputNumber = parseInt("9");
 function getInputAsArray(input) {
@@ -40,12 +40,24 @@ function getInputAsArray(input) {
   return intArray;
 }
 
-// Test: getInputAsArray should check a variable convert it to an array,then add 0 to the front
-// Expect: getInputAsArray(inputNumber).toEqual([9]);
+// Test: getInputAsArray should check a variable for a number, convert it to an array,then add 0 to the front
+// Expect: getInputAsArray(inputNumber).toEqual([0, 9]);
 const inputNumber = parseInt("9");
 function getInputAsArray(input) {
   const intArray = [input];
   intArray.unshift(0);
+  return intArray;
+}
+
+// Test: getInputAsArray should check a variable for a number, convert it to an array,then add 0 to the front 3 times
+// Expect: getInputAsArray(inputNumber).toEqual([0, 0, 0, 9]);
+const inputNumber = parseInt("9");
+function getInputAsArray(input) {
+  const intArray = [input];
+  for(let i = 1; i <= 3; i += 1) {
+    intArray.unshift(0);
+    console.log(intArray);
+  }
   return intArray;
 }
 
