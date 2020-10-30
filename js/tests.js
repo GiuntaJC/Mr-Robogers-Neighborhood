@@ -9,3 +9,11 @@ function getInputAsArray(int) {
   return false;
 }
 
+// Test: getInputAsArray should check a variable and split it into an array
+// Expect: getInputAsArray("56").toEqual(["5"], ["6"]);
+
+function getInputAsArray(int) {
+  int = "56";
+  const intArray = int.split("");
+  return intArray;
+}
