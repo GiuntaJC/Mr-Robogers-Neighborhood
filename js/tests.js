@@ -17,3 +17,13 @@ function getInputAsArray(int) {
   const intArray = int.split("");
   return intArray;
 }
+
+// Test: getInputAsArray should take an external variable and convert it to an array
+// Expect: getInputAsArray("56").toEqual(["5"], ["6"]);
+
+const inputNumber = "56";
+function getInputAsArray(int) {
+  const intArray = int.split("");
+  return intArray;
+}
+getInputAsArray(inputNumber);
