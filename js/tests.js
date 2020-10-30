@@ -130,7 +130,6 @@ function getInputAsArray(input) {
     intArray[intArray.length - 1] = ("Boop!");
   }else if(contains1.test(intArray[intArray.length - 1]) === true) {
     intArray[intArray.length - 1] = ("Beep!");
-  } else {
   }
   return intArray;
 }
